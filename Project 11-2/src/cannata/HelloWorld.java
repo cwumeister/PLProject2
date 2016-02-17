@@ -1,10 +1,10 @@
-package wu.ui;
+package cannata;
 
-public class PersonApp {
+public class HelloWorld {
 
     public static void main(String[] args) {
         // Prints "Hello, World" to the terminal window.
-        System.out.println("Hello Connie");
+        System.out.println("Hello, World");
     }
 
 }

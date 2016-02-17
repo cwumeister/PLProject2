@@ -4,7 +4,7 @@ public class Customer {
 
     public static void main(String[] args) {
         // Prints "Hello, World" to the terminal window.
-        System.out.println("Hello Connie");
+        System.out.println("Hello, World");
     }
 
 }
