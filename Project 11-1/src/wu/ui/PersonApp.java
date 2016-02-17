@@ -1,6 +1,6 @@
-package wu;
+package wu.ui;
 
-public class HelloWorld {
+public class PersonApp {
 
     public static void main(String[] args) {
         // Prints "Hello, World" to the terminal window.
