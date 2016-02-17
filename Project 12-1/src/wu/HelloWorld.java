@@ -1,4 +1,4 @@
-package cannata;
+package wu;
 
 public class HelloWorld {
 
