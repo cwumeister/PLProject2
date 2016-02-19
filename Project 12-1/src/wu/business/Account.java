@@ -24,7 +24,7 @@ public class Account implements Depositable, Withdrawable, Balanceable {
         this.withdraw = withdraw;}
     public double getWithdraw(){return withdraw;}
 
-    public void setBalance(double balanace){
+    public void setBalance(double balance){
         this.balance = balance;}
     public double getBalance(){return balance;}
 
