@@ -13,7 +13,9 @@ public class Account implements Depositable, Withdrawable, Balanceable {
     private double withdraw;
     private double balance;
 
-    public Account(){}
+    public Account(){
+        balance = 1000;
+    }
 
     public void deposit(double deposit){
         this.deposit = deposit;}
@@ -29,8 +31,9 @@ public class Account implements Depositable, Withdrawable, Balanceable {
     public double getBalance(){return balance;}
 
     public String getBalanceFormatted(){
-        NumberFormat balance = NumberFormat.getCurrencyInstance();
-        return balance.format(balance);
+        String getBalanceFormatted = "$"+String.format("%.2f", balance);
+
+        return getBalanceFormatted;
 
     }
 }
