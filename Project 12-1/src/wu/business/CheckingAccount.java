@@ -21,7 +21,7 @@ public class CheckingAccount extends Account {
     public double getMonthlyFee(){return monthlyFee;}
 
     public String getMonthlyFeeFormatted(){
-        String getMonthlyFeeFormatted = String.valueOf(monthlyFee);
+        String getMonthlyFeeFormatted = "$"+String.format("%.2f", monthlyFee);
 
         return getMonthlyFeeFormatted;
     }

@@ -1,6 +1,7 @@
 package wu.ui;
 import wu.business.Account;
 import wu.business.Transactions;
+import wu.business.CheckingAccount;
 
 import java.util.Scanner;
 /**
@@ -9,37 +10,59 @@ import java.util.Scanner;
 public class AccountApp {
 
     public static void print(Account a) {
-        Console.displayLine("Checking: $" + a.getBalanceFormatted());
+        Console.displayLine("Checking: " + a.getBalanceFormatted());
     }
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         System.out.println("Welcome to the Account Calculator");
         System.out.println();
 
+        Account a = new Account();
         System.out.println("Starting Balance");
-        System.out.println("Checking: ");
+        print (a);
 
         Scanner sc = new Scanner(System.in);
         String choice = "y";
 
-        Account a = new Account();
+        CheckingAccount c = new CheckingAccount();
+        String ch = c.getMonthlyFeeFormatted();
+        System.out.println(ch);
 
-        while (choice.equalsIgnoreCase("y")){
+
+
+         while (choice.equalsIgnoreCase("y")){
 
             System.out.print("\nWithdraw or deposit? (w/d): ");
             String wOd = sc.nextLine();
 
             if (wOd.equalsIgnoreCase("w")){
 
-                Transactions wt = new Transactions();
                 double with = Console.getDouble("Amount: ");
-                wt.withdraw(a, with);
+
+                if (with > a.getBalance())
+                {
+                    System.out.println("Cannot withdraw more than account balance");
+                }
+
+                else
+                {
+                    double neww = a.getBalance() - with;
+                    a.setBalance(neww);
+                }
+
 
             }
             else if (wOd.equalsIgnoreCase("d")){
-                Transactions dt = new Transactions();
+
                 double dep = Console.getDouble("Amount: ");
-                dt.deposit(a, dep);
+                if (dep > 10000)
+                {
+                    System.out.println("You cannot deposit more than $10,000 per transaction.");
+                }
+                else{
+                    double old = a.getBalance() + dep;
+                    a.setBalance(old);
+                }
 
             }
 
@@ -50,10 +73,7 @@ public class AccountApp {
         }
 
         System.out.println("Final Balance");
-
         print(a);
-
-
 
     }
 }

@@ -17,18 +17,22 @@ public class Account implements Depositable, Withdrawable, Balanceable {
         balance = 1000;
     }
 
-    public void deposit(double deposit){
-        this.deposit = deposit;}
+    public void deposit(double deposit){this.deposit = deposit;}
 
-    public double getDeposit(){return deposit;}
+    public double getDeposit(){
+        return deposit;}
 
-    public void withdraw(double withdraw){
-        this.withdraw = withdraw;}
-    public double getWithdraw(){return withdraw;}
+    public void withdraw(double withdraw){this.withdraw = withdraw;}
+
+    public double getWithdraw(){
+        return withdraw;}
 
     public void setBalance(double balance){
         this.balance = balance;}
-    public double getBalance(){return balance;}
+
+    public double getBalance(){
+        return balance;
+    }
 
     public String getBalanceFormatted(){
         String getBalanceFormatted = "$"+String.format("%.2f", balance);

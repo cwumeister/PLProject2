@@ -7,8 +7,11 @@ import wu.account.interfaces.Withdrawable;
  * Created by Connie Wu on 2/19/2016.
  */
 public class Transactions {
+
     public Transactions(){
     }
+
+
     public static void deposit(Depositable account, double amount) {
         account.deposit(amount);
     }
