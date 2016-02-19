@@ -31,6 +31,6 @@ public class Account implements Depositable, Withdrawable, Balanceable {
     public String getBalanceFormatted(){
         NumberFormat balance = NumberFormat.getCurrencyInstance();
         return balance.format(balance);
-        
+
     }
 }
