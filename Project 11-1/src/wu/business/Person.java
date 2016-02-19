@@ -1,10 +1,20 @@
 package wu.business;
 
-public class Person {
+public abstract class Person {
+    private String first;
+    private String last;
+    private String email;
 
-    public static void main(String[] args) {
-        // Prints "Hello, World" to the terminal window.
-        System.out.println("Hello, World");
+    public Person(){
+    }
+
+    public String getFirst() { return first;}
+    public String getLast() {return last;}
+    public String getEmail() {return email;}
+
+    @Override
+    public String getDisplayText(){
+        return super.toString()+ "Name: " + first + " " + last + "\n" + "Email " + email;
     }
 
 }
