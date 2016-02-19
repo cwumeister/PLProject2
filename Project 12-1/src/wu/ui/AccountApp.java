@@ -1,11 +1,16 @@
 package wu.ui;
 import wu.business.Account;
+import wu.business.Transactions;
 
 import java.util.Scanner;
 /**
  * Created by Connie Wu on 2/19/2016.
  */
 public class AccountApp {
+
+    public static void print(Account a) {
+        Console.displayLine("Checking: $" + a.getBalanceFormatted());
+    }
 
     public static void main (String[] args) {
         System.out.println("Welcome to the Account Calculator");
@@ -17,7 +22,7 @@ public class AccountApp {
         Scanner sc = new Scanner(System.in);
         String choice = "y";
 
-        Account a = null;
+        Account a = new Account();
 
         while (choice.equalsIgnoreCase("y")){
 
@@ -25,11 +30,17 @@ public class AccountApp {
             String wOd = sc.nextLine();
 
             if (wOd.equalsIgnoreCase("w")){
+
+                Transactions wt = new Transactions();
                 double with = Console.getDouble("Amount: ");
+                wt.withdraw(a, with);
 
             }
             else if (wOd.equalsIgnoreCase("d")){
+                Transactions dt = new Transactions();
                 double dep = Console.getDouble("Amount: ");
+                dt.deposit(a, dep);
+
             }
 
             System.out.print("\nContinue? (y/n): ");
@@ -37,6 +48,12 @@ public class AccountApp {
             System.out.println();
 
         }
+
+        System.out.println("Final Balance");
+
+        print(a);
+
+
 
     }
 }
