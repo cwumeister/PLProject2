@@ -12,6 +12,6 @@ public class Employee extends Person {
     public void setSs(String ss){this.ss = ss;}
     public String getSs(){return ss;}
 
-    public String getDisplayText(){return super.toString() + "Social security: "+ss; }
+    public String getDisplayText(){return super.toString() + "\nSocial security number: "+ss; }
 
 }

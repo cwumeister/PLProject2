@@ -12,6 +12,6 @@ public class Customer extends Person{
     public void setCustNum(String custnum){this.custnum = custnum;}
     public String getCustNum(){return custnum;}
 
-    public String getDisplayText(){return super.toString() + "Customer number: "+custnum; }
+    public String getDisplayText(){return super.toString() + "\nCustomer number: "+custnum; }
 
 }
