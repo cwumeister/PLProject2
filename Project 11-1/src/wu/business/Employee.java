@@ -9,7 +9,7 @@ public class Employee extends Person {
         ss = "";
     }
 
-    public void setSs(String social){this.ss = ss;}
+    public void setSs(String ss){this.ss = ss;}
     public String getSs(){return ss;}
 
     public String getDisplayText(){return super.toString() + "Social security: "+ss; }
