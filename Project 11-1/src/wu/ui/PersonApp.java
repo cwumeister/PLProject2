@@ -14,6 +14,8 @@ import java.util.Scanner;
             Scanner sc = new Scanner(System.in);
             String choice = "y";
 
+            Person p = null;
+
             while (choice.equalsIgnoreCase("y"))
             {
                 System.out.print("Create customer or employee? (c/e) ");
@@ -21,22 +23,47 @@ import java.util.Scanner;
 
                 if (cOre.equalsIgnoreCase("c"))
                 {
+                    Customer c = new Customer();
                     String first = Console.getString("Enter first name: ");
-                    String last = Console.getString("Enter last name: ");
-                    String email = Console.getString("Enter email: ");
-                    String custnum = Console.getString("Enter customer number: ");
+                    c.setFirst(first);
 
-                    System.out.println(first + last+ email+ custnum);
+                    String last = Console.getString("Enter last name: ");
+                    c.setLast(last);
+
+                    String email = Console.getString("Enter email: ");
+                    c.setEmail(email);
+
+                    String custnum = Console.getString("Enter customer number: ");
+                    c.setCustNum(custnum);
+
+                    p = c;
 
                 }
 
                 else if (cOre.equalsIgnoreCase("e"))
                 {
-                    String first = Console.getString("Enter first name: ");
-                    String last = Console.getString("Enter last name: ");
-                    String email = Console.getString("Enter email: ");
-                    String custnum = Console.getString("Enter social security: ");
+                    Employee e = new Employee();
 
+                    String first = Console.getString("Enter first name: ");
+                    e.setFirst(first);
+
+                    String last = Console.getString("Enter last name: ");
+                    e.setLast(last);
+
+                    String email = Console.getString("Enter email: ");
+                    e.setEmail(email);
+
+                    String ss = Console.getString("Enter social security: ");
+                    e.setSs(ss);
+
+                    p = e;
+
+
+                }
+
+                public static void print(Person p)
+                {
+                Console.displayLine("You entered:\n" + p.getDisplayText());
                 }
 
                 System.out.print("\nContinue? (y/n): ");
@@ -46,6 +73,7 @@ import java.util.Scanner;
 
         }
     }
+
 
 /*   System.out.print("\nEnter first name: ");
                     String first = sc.nextLine();
