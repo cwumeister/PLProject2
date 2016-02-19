@@ -25,10 +25,6 @@ public class AccountApp {
         String choice = "y";
 
         CheckingAccount c = new CheckingAccount();
-        String ch = c.getMonthlyFeeFormatted();
-        System.out.println(ch);
-
-
 
          while (choice.equalsIgnoreCase("y")){
 
@@ -71,9 +67,10 @@ public class AccountApp {
             System.out.println();
 
         }
-
-        System.out.println("Final Balance");
-        print(a);
+        double endBal = a.getBalance() - 1;
+        System.out.println("Monthly Fees \n" + "Checking fee:               " + c.getMonthlyFeeFormatted());
+        System.out.println();
+        System.out.println("Final Balance\n" + "Checking: " + "$" + endBal);
 
     }
 }
