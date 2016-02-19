@@ -1,10 +1,17 @@
 package wu.business;
 
-public class Employee {
+public class Employee extends Person {
 
-    public static void main(String[] args) {
-        // Prints "Hello, World" to the terminal window.
-        System.out.println("Hello, World");
+    private String ss;
+
+    public Employee(){
+        super();
+        ss = "";
     }
+
+    public void setSs(String social){this.ss = ss;}
+    public String getSs(){return ss;}
+
+    public String getDisplayText(){return super.toString() + "Social security: "+ss; }
 
 }
