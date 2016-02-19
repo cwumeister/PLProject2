@@ -1,4 +1,6 @@
 package wu.ui;
+import wu.business.Account;
+
 import java.util.Scanner;
 /**
  * Created by Connie Wu on 2/19/2016.
@@ -15,16 +17,19 @@ public class AccountApp {
         Scanner sc = new Scanner(System.in);
         String choice = "y";
 
+        Account a = null;
+
         while (choice.equalsIgnoreCase("y")){
 
             System.out.print("\nWithdraw or deposit? (w/d): ");
             String wOd = sc.nextLine();
 
             if (wOd.equalsIgnoreCase("w")){
-                System.out.print("Withdraw");
+                double with = Console.getDouble("Amount: ");
+
             }
             else if (wOd.equalsIgnoreCase("d")){
-                System.out.println("Desposit");
+                double dep = Console.getDouble("Amount: ");
             }
 
             System.out.print("\nContinue? (y/n): ");
