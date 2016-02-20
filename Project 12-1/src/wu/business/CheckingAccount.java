@@ -1,5 +1,7 @@
 package wu.business;
 
+import java.text.NumberFormat;
+
 /**
  * Created by Connie Wu on 2/19/2016.
  */
@@ -11,19 +13,18 @@ public class CheckingAccount extends Account {
         super();
         monthlyFee = 1.00;
     }
-
     public void subtractMonthlyFee(){
-        double newMonFee = super.getBalance() - monthlyFee;
-
+        setBalance(getBalance()-1);
     }
-
-    public void setMonthlyFee(double monthlyFee){this.monthlyFee = monthlyFee;}
-    public double getMonthlyFee(){return monthlyFee;}
-
+    public void setMonthlyFee(double monthlyFee){
+        this.monthlyFee = monthlyFee;
+    }
+    public double getMonthlyFee(){
+        return monthlyFee;
+    }
     public String getMonthlyFeeFormatted(){
-        String getMonthlyFeeFormatted = "$"+String.format("%.2f", monthlyFee);
-
-        return getMonthlyFeeFormatted;
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        return currency.format(monthlyFee);
     }
 
 }

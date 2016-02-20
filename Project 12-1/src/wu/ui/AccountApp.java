@@ -14,17 +14,14 @@ public class AccountApp {
     }
 
     public static void main(String[] args) {
-        System.out.println("Welcome to the Account Calculator");
-        System.out.println();
+        System.out.println("Welcome to the Account Calculator\n");
 
-        Account a = new Account();
+        CheckingAccount ca = new CheckingAccount();
         System.out.println("Starting Balance");
-        print (a);
+        print (ca);
 
         Scanner sc = new Scanner(System.in);
         String choice = "y";
-
-        CheckingAccount c = new CheckingAccount();
 
          while (choice.equalsIgnoreCase("y")){
 
@@ -35,18 +32,14 @@ public class AccountApp {
 
                 double with = Console.getDouble("Amount: ");
 
-                if (with > a.getBalance())
+                if (with > ca.getBalance())
                 {
                     System.out.println("Cannot withdraw more than account balance");
                 }
-
                 else
                 {
-                    double neww = a.getBalance() - with;
-                    a.setBalance(neww);
+                    Transactions.withdraw(ca, with);
                 }
-
-
             }
             else if (wOd.equalsIgnoreCase("d")){
 
@@ -56,21 +49,18 @@ public class AccountApp {
                     System.out.println("You cannot deposit more than $10,000 per transaction.");
                 }
                 else{
-                    double old = a.getBalance() + dep;
-                    a.setBalance(old);
+                    Transactions.deposit(ca, dep);
                 }
 
             }
-
             System.out.print("\nContinue? (y/n): ");
             choice = sc.nextLine();
-            System.out.println();
-
         }
-        double endBal = a.getBalance() - 1;
-        System.out.println("Monthly Fees \n" + "Checking fee:               " + c.getMonthlyFeeFormatted());
+        System.out.println("\nMonthly Fees \n" + "Checking fee:           " + ca.getMonthlyFeeFormatted());
         System.out.println();
-        System.out.println("Final Balance\n" + "Checking: " + "$" + endBal);
+        ca.subtractMonthlyFee();
+        System.out.println("Final Balance");
+        print(ca);
 
     }
 }
