@@ -2,9 +2,7 @@ package wu.ui;
 import wu.business.Customer;
 import wu.business.Employee;
 import wu.business.Person;
-
 import java.util.Scanner;
-
 
 public class PersonApp {
 
